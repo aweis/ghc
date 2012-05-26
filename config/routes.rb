@@ -1,4 +1,6 @@
 Ghc::Application.routes.draw do
+  resources :places
+
   resources :schools
 
   # The priority is based upon order of creation:
