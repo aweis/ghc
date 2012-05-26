@@ -1,4 +1,6 @@
 Ghc::Application.routes.draw do
+  resources :invitations
+
   resources :events
 
   resources :places
