@@ -1,4 +1,6 @@
 Ghc::Application.routes.draw do
+  resources :events
+
   resources :places
 
   resources :schools
