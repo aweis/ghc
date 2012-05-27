@@ -1,4 +1,11 @@
 Ghc::Application.routes.draw do
+   
+  root :to => 'schools#index'
+  
+  get "sessions/new"
+
+  resources :users
+
   resources :invitations
 
   resources :events
