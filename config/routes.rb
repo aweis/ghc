@@ -1,5 +1,13 @@
 Ghc::Application.routes.draw do
    
+  get "friendships/create"
+
+  get "friendships/destroy"
+
+  get "friendship/create"
+
+  get "friendship/destroy"
+
   root :to => 'schools#index'
 
   get 'signup', to: 'users#new', as: 'signup'
