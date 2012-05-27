@@ -8,7 +8,15 @@
 </head>
 <body>
   <div id="user_header">
-    <%= link_to "Sign Up", new_user_path %>
+    <% if current_user %>
+      Logged in as <%= current_user.email %>
+
+      <% # current is a dummy parameter (can be anything) %>
+      <%= link_to "Log Out", logout_path %> 
+    <% else %>
+      <%= link_to "Sign Up", signup_path %> or
+      <%= link_to "Log In", login_path %>
+    <% end %>
   </div>
 <%= yield %>
 
