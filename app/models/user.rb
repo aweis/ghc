@@ -14,4 +14,15 @@ class User < ActiveRecord::Base
   # We don't need to validate_presence_of (password | password_confirmation)
   # that is taken care of with "has_secure_password" above
   validates_uniqueness_of :email
+  
+  # Callbacks
+  before_create { generate_token(:auth_token) }
+
+  # This is to make a token for storing the session in a cookie
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
+
 end
