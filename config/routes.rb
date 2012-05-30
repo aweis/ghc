@@ -1,11 +1,9 @@
 Ghc::Application.routes.draw do
    
+
   get "friendships/create"
-
   get "friendships/destroy"
-
   get "friendship/create"
-
   get "friendship/destroy"
 
   root :to => 'schools#index'
@@ -16,14 +14,11 @@ Ghc::Application.routes.draw do
 
   resources :sessions
   resources :users
-
   resources :invitations
-
   resources :events
-
   resources :places
-
   resources :schools
+  resources :password_resets
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
